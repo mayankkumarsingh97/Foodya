@@ -1,0 +1,2195 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="{% static 'img/apple-icon.png' %}">
+  <link rel="icon" type="image/png" href="{% static 'img/foodyaFevicon.png' %}">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+  <title>
+    Foodya
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200|Open+Sans+Condensed:700" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css' %}" rel="stylesheet">
+  <!-- CSS Files -->
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+  <link href="{% static 'css/now-ui-kit.css' %}" rel="stylesheet" />
+
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="{% static 'demo/demo.css' %}" rel="stylesheet" />
+
+  {% with name="fonts.html" %}
+
+{% include name %}
+
+{% endwith %}
+
+<style>
+  html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+</style>
+
+<style>
+  .ye{
+  margin-left: 57px;
+  
+}
+</style>
+
+  <style media="screen">
+    body{
+      background:#fbf4ee;
+    }
+    a:hover {
+      text-decoration:none;
+
+    }
+    .nav-item a{
+      color:black !important;
+      font-size:16px !important;
+    }
+
+    .carousel-indicators .active {
+    background-color: #febd23 !important;
+}
+    .header-img{
+      max-width:163%;
+    }
+    .header-img-left{
+      margin-left:-226px;
+    }
+    .vert .carousel-item-next.carousel-item-left,
+    .vert .carousel-item-prev.carousel-item-right {
+        -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+    }
+
+    .vert .carousel-item-next,
+    .vert .active.carousel-item-right {
+        -webkit-transform: translate3d(0, 100%, 0);
+                transform: translate3d(0, 100% 0);
+    }
+
+    .vert .carousel-item-prev,
+    .vert .active.carousel-item-left {
+    -webkit-transform: translate3d(0,-100%, 0);
+            transform: translate3d(0,-100%, 0);
+    }
+
+  .indicators-align{
+  text-align: right;
+  float: right;
+  /* right: 2% !important; */
+  margin-right: -2px;
+  left: inherit;
+  bottom: 200px;
+  transform: rotate(90deg);
+    }
+    .row{
+      margin-right:0px;
+    }
+    .modal-size{
+      width: 40%;
+      height: fit-content;
+    }
+    @media screen and (max-width: 720px) {
+      .header-img{
+        max-width:100%;
+      }
+      .header-img-left {
+    margin-left: 0px;
+
+    padding-right: 0px;
+}
+.header-Arrow{
+  display:none;
+}
+.indicators-align {
+    text-align: right;
+    float: right;
+    /* right: 2% !important; */
+    margin-right: 0px;
+    left: inherit;
+    bottom: 100px;
+    transform: rotate(90deg);
+    width:50px;
+}
+
+.modal-size{
+  width: 100%;
+  height: fit-content;
+}
+
+
+    }
+      @media screen and (max-width: 560px) {
+
+        
+
+        .header-img{
+          max-width:120%;
+        }
+
+        .row{
+          margin-right: -15px;
+        }
+        .header-img-left{
+          margin-left:-64px;
+        }
+        .header-Arrow{
+          display:none;
+        }
+      .circle-height{
+        border:30px solid white;
+        border-radius:50%;
+        height:300px;
+        width:300px;
+        background:black;
+      }
+      .circle-font{
+      font-size: 2.9em !important;
+      margin-top:55px!important;
+      }
+      .circle-smallfont{
+      font-size: 10px !important;
+      /* margin-top:120px !important; */
+      }
+      .modal-size{
+        width: 100%;
+        height: fit-content;
+      }
+    }
+    .nav-logoSize{
+      max-width:35%;
+    }
+    .Title{
+      font-size: 2.0em;
+    }
+    .Title2{
+    font-size: 2.525em;
+    line-height: 0.9em;
+    }
+    .newfo{
+      color:#db545a;
+      font-weight:600;
+      font-size:70px
+    }
+    .image-border {
+  height: 460px!important;
+  position: relative!important;
+  background-position: center center;
+  background-size: cover;
+  box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 30%) !important;
+  border-radius: 0rem!important;
+}
+.image-topdis{
+  top: 250px !important;
+}
+.features-10{
+  margin-top:-110px;
+}
+.pad-top{
+  padding-top:120px !important;
+}
+.project3-pad{
+  margin-top:-75px;
+}
+@media screen and (max-width:520px){
+  .indicators-align{
+    text-align: right;
+  float: right;
+  width: 40px;
+  /* right: 2% !important; */
+  left: inherit;
+  bottom: 50px;
+  transform: rotate(90deg);
+  margin-right: -2px;
+    }
+  .pad-top{
+    padding-top:0px !important;
+  }
+      .nav-logoSize{
+        max-width:50%;
+      }
+      .Title{
+        font-size: 1.5em;
+      }
+      .Title2{
+      font-size: 2.025em;
+      line-height: 0.9em;
+      }
+      .newfo{
+        color:#db545a;
+        font-weight:600;
+        font-size:60px
+      }
+      .noimg{
+        width:150px;
+        margin-top:-15px;
+      }
+      .colwidth{
+      width:50%;
+      }
+      .sideimg{
+      display:none;
+      }
+      .image-border {
+    height: 278px !important;
+    position: relative!important;
+    background-position: center center;
+    background-size: cover;
+    box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 30%)!important;
+    border-radius: 0rem !important;
+}
+.image-topdis{
+  top: -200px !important;
+}
+.project3-pad{
+  margin-top:-115px;
+}
+
+.sat{
+  color:#febd23;
+}
+
+    }
+  </style>
+  <style>
+
+#btn2{
+    width: 150px;
+    height: 50px;
+    background: #febd23;
+    border-radius: 8px;
+    -webkit-clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(0% 0%, 80% 0, 100% 100%, 0% 100%);
+    /* clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%); */
+}
+
+.badge {
+  height: 50px;
+  width: 50px;
+  display: table-cell;
+  /* text-align: center; */
+  vertical-align: middle;
+  border-radius: 50%;
+  background: #febd23;
+}
+
+</style>
+
+<!-- ---------------------------------option on click-------------------------------- -->
+
+
+
+
+<style>
+  body {
+	 font-family: sans-serif;
+	 background-color: #ffffff;
+}
+ .modal-open {
+	 padding: 10px 0;
+	 font-weight: 300;
+	 letter-spacing: 3px;
+	 text-transform: uppercase;
+	 color: rgb(22, 20, 20);
+	 border: 0;
+	 outline: none;
+	 background-color: transparent;
+	 position: absolute;
+	 top: 80%;
+   /* top:50%; */
+	 left: 50%;
+	 transform: translate(-50%, -50%);
+}
+ .modal-open:before, .modal-open:after {
+	 content: "";
+	 position: absolute;
+	 top: 100%;
+	 left: 0;
+	 height: 2px;
+	 transition: width 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+ .modal-open:before {
+	 width: 100%;
+	 background-color: #9d9d9d;
+}
+ .modal-open:after {
+	 width: 0;
+	 background-color: #505050;
+}
+ .modal-open:hover:after {
+	 width: calc(100% + 1px);
+}
+ .modal-box {
+	 position: absolute;
+	 overflow: hidden;
+	 width: 0;
+	 height: 2px;
+	 color: rgb(8, 8, 8);
+   background-color:#febd23;
+   opacity: 95%;
+   
+	 /* background-color: rgba(0, 0, 0, .8); */
+   border-radius: 10px;
+	 transition: width 400ms 400ms cubic-bezier(0.165, 0.84, 0.44, 1), left 400ms 400ms cubic-bezier(0.165, 0.84, 0.44, 1), height 400ms 0ms cubic-bezier(0.165, 0.84, 0.44, 1), top 400ms 0ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+ .modal-box.is-open {
+	 transition: width 400ms 0ms cubic-bezier(0.165, 0.84, 0.44, 1), left 400ms 0ms cubic-bezier(0.165, 0.84, 0.44, 1), height 400ms 400ms cubic-bezier(0.165, 0.84, 0.44, 1), top 400ms 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+ .modal-box.is-open li {
+	 opacity: 1;
+}
+ .modal-box.is-open .modal-close {
+	 opacity: 1;
+	 transition: all 500ms 700ms;
+}
+
+
+ .modal-box ul {
+   display: flex;
+	 position: absolute;
+	 top: 50%;
+	 left: 50%;
+	 margin: 0;
+	 padding: 20px;
+	 list-style-type: none;
+   width: 180px;
+   /* width: 100px; */
+	 transform: translate(-50%, -50%);
+}
+.modal-box ul li a img{
+  /* width: 200px; */
+}
+
+ .modal-box li {
+	 position: relative;
+	 margin: 20px 0;
+	 text-align: center;
+	 opacity: 0;
+	 transition: all 200ms;
+}
+
+
+ .modal-box a {
+	 position: relative;
+	 font-weight: 300;
+	 text-decoration: none;
+	 letter-spacing: 3px;
+	 text-transform: uppercase;
+	 color: #fff;
+}
+
+ .modal-box a:before, .modal-box a:after {
+	 content: "";
+	 position: absolute;
+	 top: 100%;
+	 left: 0;
+	 height: 2px;
+	 transition: width 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+
+ .modal-box a:after {
+	 width: 0;
+	 background-color: #fff;
+}
+ .modal-box a:hover:after {
+	 width: 100%;
+}
+ .modal-box.is-open li:nth-child(1) {
+	 transition: all 500ms 575ms;
+}
+ .modal-box.is-open li:nth-child(2) {
+	 transition: all 500ms 650ms;
+}
+ .modal-box.is-open li:nth-child(3) {
+	 transition: all 500ms 725ms;
+}
+ .modal-box.is-open li:nth-child(4) {
+	 transition: all 500ms 800ms;
+}
+ .modal-box.is-open li:nth-child(5) {
+	 transition: all 500ms 875ms;
+}
+ .modal-close {
+	 position: absolute;
+	 top: 10px;
+	 right: 10px;
+	 width: 15px;
+	 height: 15px;
+	 padding: 0;
+	 border: 0;
+	 outline: none;
+	 opacity: 0;
+	 background-color: transparent;
+	 transform: rotate(-45deg);
+}
+ .modal-close:before, .modal-close:after {
+	 content: "";
+	 display: block;
+	 position: absolute;
+	 top: 50%;
+	 left: 0;
+	 width: 15px;
+	 height: 3px;
+	 background-color: rgb(0, 0, 0);
+	 transform: translate(-50%, -50%);
+}
+
+ .modal-close:after {
+	 width: 3px;
+	 height: 15px;
+}
+ .visuallyhidden {
+	 position: absolute;
+	 overflow: hidden;
+	 clip: rect(0 0 0 0);
+	 width: 1px;
+	 height: 1px;
+	 margin: -1px;
+	 padding: 0;
+	 border: 0;
+}
+
+.modal-box ul li a img{
+  width: 200px !important;
+  height: auto;
+}
+ 
+</style>
+
+<style>
+  .btnClass{
+    font-weight: 800;
+    letter-spacing: normal;
+  }
+
+  .myClass{
+    font-size: .9rem;
+    border:3px solid #febd23;
+  }
+  .bdr{
+    border-radius: 10px;
+    border:3px solid #febd23;
+  }
+</style>
+
+</head>
+
+<body class="presentation-page sidebar-collapse" >
+
+  <!-- End Google Tag Manager (noscript) -->
+  <!-- Navbar -->
+  <!-- <nav class="navbar navbar-expand-lg  fixed-top  bg-white navbar-transparent" color-on-scroll="500"> -->
+<nav class="navbar navbar-expand-lg  fixed-top bg-white">
+    <div class="container">
+      <div class="navbar-translate">
+        <a class="navbar-brand" href="" rel="tooltip" target="_blank">
+          <img src="{% static 'img/foodya-logo.png' %}" class="nav-logoSize">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-bar top-bar"></span>
+          <span class="navbar-toggler-bar middle-bar"></span>
+          <span class="navbar-toggler-bar bottom-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" data-nav-image="{% static 'img//blurred-image-1.jpg' %}" data-color="orange">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item" >
+              <a  class="nav-link" href="#menu">
+                   <span style="color:#febd23;">Menu</span>
+              </a>
+          </li>
+
+          <li class="nav-item">
+              <a class="nav-link scrollto" href="#aboutus">
+                  About Us
+              </a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#">
+                  Delivery
+              </a>
+          </li>
+
+          <li class="nav-item">
+              <a class="nav-link" href="#aboutchefs">
+                Our Chefs
+              </a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#review">
+                Reviews
+              </a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#contactus">
+                Contact us
+              </a>
+          </li>
+          <li class="nav-item">&nbsp;&nbsp;
+            <a target="_blank" href="https://foodya.dotpe.in/store/1/pickup"><img height="40px;"src="{% static 'img/bag.png' %}" alt=""></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<div>
+  <div class="section mt-5" style="background:#fbf4ee;padding: 10px 0px;" >
+
+    <div class="wrapper">
+
+
+        <!-- <div class="page-header-image" data-parallax="true">
+        </div> -->
+
+          <div class="row">
+            <div class="col-md-8 p-lg-5">
+              <h1 class="title text-dark pl-4" >TODAY'S SPECIAL </h1>
+              <h2 class="description text-dark pl-4">FRESH FOOD MENU</h2>
+              <div class="row">
+
+
+              <div class="col-md-6">
+
+                <p class="description text-dark pl-4">
+                  Blending the traditional 
+                  Indian taste with global
+                  classics, Foodya guarantees 
+                  to give you one of the best.
+
+
+                </p>
+                <a target="_blank" href="https://www.zomato.com/ncr/foodya-sector-63-noida" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 170px; height: 50px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;" >ORDER NOW </h4></a>
+                 <!-- <button id="btn2">Hello</button> -->
+                 <p class="description text-dark pt-4 pl-4" style="margin-top:-26px"><b style="font-weight:500; margin-top:-8px;">Looking for Corporate Luncheons?<br></b><a style="color: #E5A50C;font-weight: 900;" href="#Corporate-Luncheons">Reach Us!</a></p>
+                <p  class="description text-dark pt-4 mt-4 pl-4"><i>“Good food is not a privilege... <br><b style="font-weight:600;">IT’S YOUR RIGHT. ”</b></i></p>
+              </div>
+              <div class="col-md-6 header-Arrow">
+                <img src="{% static 'img/Arrow.png' %}" style="width: 80%;" class="mt-4 pt-4" alt="">
+              </div>
+                </div>
+            </div>
+            <div class="col-md-4 header-img-left" >
+              <img src="{% static 'img/Banner-images.png' %}"  class="header-img" alt="">
+              <!-- <h1 class="title text-dark">About Us</h1>
+              <h4 class="description text-dark">Meet the amazing team behind this project and find out more about how we work.</h4> -->
+            </div>
+          </div>
+    </div>
+  </div>
+
+
+
+  <div class="projects-3" style="padding: 0px 0px !important;">
+  <div class="container">
+
+    <div class="section-story-overview">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card card-raised card-form-horizontal" style="background:#fbf4ee;">
+    					<div class="card-body">
+                <div class="row">
+
+                <div class="col-md-4">
+
+                  <img src="{% static 'img/clock.png' %}" alt="">
+                </div>
+                <div class="col-md-8">
+                  <h5 class="title text-dark" style="margin-top:-15px;">9:30 am - 8:30 pm</h5>
+                  <h5 class="description text-dark" style="margin-top:-15px;">Working Hours</h5>
+                </div>
+              </div>
+    					</div>
+    				</div>
+            </div>
+            <div class="col-md-4">
+              <div class="card card-raised card-form-horizontal" style="background:#fbf4ee;">
+    					<div class="card-body">
+                <a href="https://goo.gl/maps/8AHS5fPexyxLD5978" target="_blank">
+                <div class="row">
+
+                <div class="col-md-4">
+
+                  <img src="{% static 'img/loacation.png' %}" alt="">
+                </div>
+                <div class="col-md-8">
+                  <h5 class="title text-dark" style="margin-top:-15px;">G-196 Noida</h5>
+                  <h5 class="description text-dark" style="margin-top:-15px;">Get Direction</h5>
+                </div>
+              </div>
+            </a>
+    					</div>
+    				</div>
+            </div>
+            <div class="col-md-4">
+              <div class="card card-raised card-form-horizontal" style="background:#fbf4ee;">
+    					<div class="card-body">
+                <a href="tel:9818468108">
+                <div class="row">
+
+                <div class="col-md-4">
+                <img src="{% static 'img/call.png' %}" alt="">
+                </div>
+                <div class="col-md-8">
+                  <h5 class="title text-dark" style="margin-top:-15px;">9818468108</h5>
+                  <h5 class="description text-dark" style="margin-top:-15px;">Call Order Now</h5>
+                </div>
+              </div>
+            </a>
+    					</div>
+    				</div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col-md-5">
+
+          <div class="image-container image-right image-topdis" style="height:auto">
+            <div  style="padding: 20px 60px; height:auto">
+
+              
+
+              <p><b>
+              
+              </p>
+            </div>
+          </div>
+
+        </div> -->
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="section" id="menu" style="background:#fbf4ee; padding: 0px 0px;" >
+  <div class="container">
+  <div class="row">
+      <div class="col-md-12">
+        <h1 class="title text-center">EXPLORE <br>OUR MENU</h1>
+        <div class="nav-align-center">
+          <ul class="nav nav-pills nav-pills-just-icons" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" style="border-radius:5%; width:100%; height: auto;" data-toggle="tab" href="#north" role="tablist">
+              TASTE OF <br>NORTH
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" style="border-radius:5%; height: auto;margin-left: 20px;" data-toggle="tab" href="#italiano" role="tablist">
+                TASTE OF <br>ITALIANO
+                </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="border-radius:5%; height: auto;"  data-toggle="tab" href="#south" role="tablist">
+              TASTE OF <br>SOUTH
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="border-radius:5%; width:100%;  height: auto;"  data-toggle="tab" href="#continental" role="tablist">
+              TASTE OF <br>CONTINENTAL
+              </a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" style="border-radius:5%; width:100%;  height: auto;"  data-toggle="tab" href="#mayonnaise" role="tablist">
+              HOME MADE <br>MAYONNAISE
+              </a>
+            </li> -->
+
+            <!-- <li class="nav-item">
+              <a class="nav-link pt-3" style="border-radius:5%; height: 58px;margin-left: 20px;"  data-toggle="tab" href="#coffee" role="tablist">
+              COFFEE
+              </a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link pt-3" style="border-radius:5%; height: 58px;"  data-toggle="tab" href="#drinks" role="tablist">
+              DRINKS
+              </a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link pt-3" style="border-radius:5%; height: 58px;"  data-toggle="tab" href="#extras" role="tablist">
+            EXTRAS
+              </a>
+            </li> -->
+
+          </ul>
+        </div>
+        <!-- Tab panes -->
+
+
+
+
+        <div class="tab-content gallery"  style="margin-top:50px;">
+          <div class="tab-pane active" id="north" role="tabpanel">
+            <div class="row justify-content-center">
+              <div class="col-md-6 col-lg-3">
+                  <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                    <div class="card-avatar" style="margin: -30px auto 0;">
+                      <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank">
+                        <img class="img " src="{% static 'img/menu/picinsert1.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                      </a>
+                    </div>
+                    <div class="card-body">
+                      <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"><h4 class="card-category text-uppercase" style="margin-top:-18px;"><b>Ghar ka dabba</b></h4></a>
+                      <h4 class="card-title" style="margin-top: -12px;">Rs. 89.00</h4>
+                      
+                      <!-- <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary text-uppercase" style="background:#febd23;color: #000;font-weight: 800;margin-top: -2px;">Order Now</a> -->
+                      <a  href="https://foodya.dotpe.in/store/1/pickup" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 148px; height: 42px;margin-top: -2px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;font-size: 14px;" >ORDER NOW </h4></a>
+                      
+                      <!-- <button class="modal-open btn btn-info btnClass px-2" style="background:#febd23">order now</button> -->
+                      <!-- <button class="btn btn-primary">click here</button> -->
+                      <div class="modal-box">
+                        <div class="modal-box-content">
+                            <ul class="" style="display: inline important;">
+                                <a style="color: rgb(0, 0, 0);" href="#"><img  style="max-width: 100%;" src="{% static 'img/1.png' %}" alt=""></a>
+                                <a style="color: rgb(0, 0, 0);" href="#"><img   style="max-width: 100%;" src="{% static 'img/2.png' %}" alt=""></a>
+                                <!-- <li><a href="#">Three</a></li>
+                                <li><a href="#">Four</a></li>
+                                <li><a href="#">Five</a></li> -->
+                            </ul>
+                        </div>
+                        <!-- <button class="modal-close"><span class="visuallyhidden">Close modal box</span></button> -->
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              <div class="col-md-6 col-lg-3">
+                  <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow:0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                    <div class="card-avatar" style="margin: -30px auto 0;">
+                      <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank">
+                      <img class="img " src="{% static 'img/menu/picinsert20.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                      </a>
+                    </div>
+                    <!-- <div class="card-body">
+                      <h4 class="card-category" style="margin-top:0px;"><b>North Indian Thali</b></h4>
+                      <h4 class="card-title">Rs. 180.00</h4>
+
+                      <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary " style="background:#febd23">Order Now</a>
+
+                      <button class="modal-open btn btn-info btnClass px-2" style="background:#febd23">order now</button>
+                      <div class="modal-box">
+                        <div class="modal-box-content">
+                            <ul class="" style="display: inline important;">
+                                <a style="color: rgb(0, 0, 0);" href="#"><img  style="max-width: 100%;" src="{% static 'img/1.png' %}" alt=""></a>
+                                <a style="color: rgb(0, 0, 0);" href="#"><img   style="max-width: 100%;" src="{% static 'img/2.png' %}" alt=""></a>
+                                <li><a href="#">Three</a></li>
+                                <li><a href="#">Four</a></li>
+                                <li><a href="#">Five</a></li>
+                            </ul>
+                        </div>
+                        <button class="modal-close"><span class="visuallyhidden">Close modal box</span></button>
+                    </div>
+                    </div> -->
+
+                    <div class="card-body">
+                      <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"><h4 class="card-category text-uppercase" style="margin-top:-18px;font-size: 18px;font-weight: 500;"><b>North Indian Thali</b></h4></a>
+                      <h4 class="card-title" style="margin-top: -12px;">Rs. 180.00</h4>
+                      
+                      <!-- <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary text-uppercase" style="background:#febd23;color: #000;font-weight: 800;margin-top: -2px;">Order Now</a> -->
+                      <a  href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 148px; height: 42px;margin-top: -2px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;font-size: 14px;" >ORDER NOW </h4></a>
+                      
+                      <!-- <button class="modal-open btn btn-info btnClass px-2" style="background:#febd23">order now</button> -->
+                      <!-- <button class="btn btn-primary">click here</button> -->
+                      <div class="modal-box">
+                        <div class="modal-box-content">
+                            <ul class="" style="display: inline important;">
+                                <a style="color: rgb(0, 0, 0);" href="#"><img  style="max-width: 100%;" src="{% static 'img/1.png' %}" alt=""></a>
+                                <a style="color: rgb(0, 0, 0);" href="#"><img   style="max-width: 100%;" src="{% static 'img/2.png' %}" alt=""></a>
+                                <!-- <li><a href="#">Three</a></li>
+                                <li><a href="#">Four</a></li>
+                                <li><a href="#">Five</a></li> -->
+                            </ul>
+                        </div>
+                        <!-- <button class="modal-close"><span class="visuallyhidden">Close modal box</span></button> -->
+                    </div>
+                    </div>
+                  </div>
+                </div>
+
+                  <div class="col-md-6 col-lg-3">
+                      <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                        <div class="card-avatar" style="margin: -30px auto 0;">
+                          <a href="https://foodya.dotpe.in/store/1/pickup">
+                          <img class="img " src="{% static 'img/menu/picinsert28.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                          </a>
+                        </div>
+                        <!-- <div class="card-body">
+                          <h4 class="card-category" style="margin-top:0px;"><b>Rajma Chawal</b></h4>
+                          <h4 class="card-title">₹ 85.00</h4>
+                       
+                          <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"class="btn btn-primary " style="background:#febd23">Order Now</a>
+                        </div> -->
+                        <div class="card-body">
+                          <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"><h4 class="card-category text-uppercase" style="margin-top:-18px;font-size: 18px;font-weight: 500;"><b>Rajma Chawal</b></h4></a>
+                          <h4 class="card-title" style="margin-top: -12px;">Rs. 85.00</h4>
+                          
+                          <!-- <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary text-uppercase" style="background:#febd23;color: #000;font-weight: 800;margin-top: -2px;">Order Now</a> -->
+                          <a  href="https://foodya.dotpe.in/store/1/pickup" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 148px; height: 42px;margin-top: -2px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;font-size: 14px;" >ORDER NOW </h4></a>
+                          
+                          <!-- <button class="modal-open btn btn-info btnClass px-2" style="background:#febd23">order now</button> -->
+                          <!-- <button class="btn btn-primary">click here</button> -->
+                          <div class="modal-box">
+                            <div class="modal-box-content">
+                                <ul class="" style="display: inline important;">
+                                    <a style="color: rgb(0, 0, 0);" href="#"><img  style="max-width: 100%;" src="{% static 'img/1.png' %}" alt=""></a>
+                                    <a style="color: rgb(0, 0, 0);" href="#"><img   style="max-width: 100%;" src="{% static 'img/2.png' %}" alt=""></a>
+                                    <!-- <li><a href="#">Three</a></li>
+                                    <li><a href="#">Four</a></li>
+                                    <li><a href="#">Five</a></li> -->
+                                </ul>
+                            </div>
+                            <!-- <button class="modal-close"><span class="visuallyhidden">Close modal box</span></button> -->
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-md-6 col-lg-3">
+                  <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                    <div class="card-avatar" style="margin: -30px auto 0;">
+                      <a href="https://foodya.dotpe.in/store/1/pickup">
+                      <img class="img " src="{% static 'img/menu/picinsert27.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                      </a>
+                    </div>
+                    <!-- <div class="card-body">
+                      <h4 class="card-category" style="margin-top:0px;"><b>Kadi Chawal</b></h4>
+                      <h4 class="card-title">₹ 85.00</h4>
+
+                      <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary " style="background:#febd23">Order Now</a>
+                    </div> -->
+                    <div class="card-body">
+                      <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"><h4 class="card-category text-uppercase" style="margin-top:-18px;font-size: 18px;font-weight: 500;"><b>Kadi Chawal</b></h4></a>
+                      <h4 class="card-title" style="margin-top: -12px;">Rs. 85.00</h4>
+                      
+                      <!-- <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary text-uppercase" style="background:#febd23;color: #000;font-weight: 800;margin-top: -2px;">Order Now</a> -->
+                      <a  href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 148px; height: 42px;margin-top: -2px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;font-size: 14px;" >ORDER NOW </h4></a>
+                      
+                      <!-- <button class="modal-open btn btn-info btnClass px-2" style="background:#febd23">order now</button> -->
+                      <!-- <button class="btn btn-primary">click here</button> -->
+                      <div class="modal-box">
+                        <div class="modal-box-content">
+                            <ul class="" style="display: inline important;">
+                                <a style="color: rgb(0, 0, 0);" href="#"><img  style="max-width: 100%;" src="{% static 'img/1.png' %}" alt=""></a>
+                                <a style="color: rgb(0, 0, 0);" href="#"><img   style="max-width: 100%;" src="{% static 'img/2.png' %}" alt=""></a>
+                                <!-- <li><a href="#">Three</a></li>
+                                <li><a href="#">Four</a></li>
+                                <li><a href="#">Five</a></li> -->
+                            </ul>
+                        </div>
+                        <!-- <button class="modal-close"><span class="visuallyhidden">Close modal box</span></button> -->
+                    </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                      <div class="card-avatar" style="margin: -30px auto 0;">
+                        <a href="https://foodya.dotpe.in/store/1/pickup">
+                        <img class="img " src="{% static 'img/menu/picinsert26.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                        </a>
+                      </div>
+                      <!-- <div class="card-body">
+                        <h4 class="card-category" style="margin-top:0px;"><b>Chole Chawal</b></h4>
+                        <h4 class="card-title">₹ 85.00</h4>
+                     
+                        <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary " style="background:#febd23">Order Now</a>
+                      </div> -->
+
+                      <div class="card-body">
+                        <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"><h4 class="card-category text-uppercase" style="margin-top:-18px;font-size: 18px;font-weight: 500;"><b>Chole Chawal</b></h4></a>
+                        <h4 class="card-title" style="margin-top: -12px;">Rs. 85.00</h4>
+                        
+                        <!-- <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary text-uppercase" style="background:#febd23;color: #000;font-weight: 800;margin-top: -2px;">Order Now</a> -->
+                        <a  href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 148px; height: 42px;margin-top: -2px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;font-size: 14px;" >ORDER NOW </h4></a>
+                        
+                    </div>
+                  </div>
+
+                  </div>
+
+                  <div class="col-md-6 col-lg-3">
+                      <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                        <div class="card-avatar" style="margin: -30px auto 0;">
+                          <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank">
+                          <img class="img " src="{% static 'img/menu/picinsert6.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                          </a>
+                        </div>
+                        <!-- <div class="card-body">
+                          <h4 class="card-category" style="margin-top:0px;"><b>Chole Bhature</b></h4>
+                          <h4 class="card-title">₹ 89.00</h4>
+                       
+                          <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary " style="background:#febd23">Order Now</a>
+                        </div> -->
+
+                        <div class="card-body">
+                          <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"><h4 class="card-category text-uppercase" style="margin-top:-18px;font-size: 18px;font-weight: 500;"><b>Chole Bhature</b></h4></a>
+                          <h4 class="card-title" style="margin-top: -12px;">Rs. 89.00</h4>
+                          
+                          <!-- <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary text-uppercase" style="background:#febd23;color: #000;font-weight: 800;margin-top: -2px;">Order Now</a> -->
+                          <a  href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 148px; height: 42px;margin-top: -2px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;font-size: 14px;" >ORDER NOW </h4></a>
+                          
+                      </div>
+                      </div>
+                    </div>
+            </div>
+            <div class="row">
+
+              <div class="col-md-6 col-lg-3 ml-auto mr-auto">
+                <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                  <div class="card-avatar" style="margin: -30px auto 0;">
+                    <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank">
+                      <img class="img " src="{% static 'img/menu/picinsert7.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                    </a>
+                  </div>
+                  <!-- <div class="card-body">
+                    <h4 class="card-category" style="margin-top:0px;"><b>Chole Kulche</b></h4>
+                    <h4 class="card-title">₹ 85.00</h4>
+                  
+                    <a href="https://foodya.dotpe.in/store/1/pickup" class="btn btn-primary " style="background:#febd23">Order Now</a>
+                  </div> -->
+                  <div class="card-body">
+                    <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"><h4 class="card-category text-uppercase" style="margin-top:-18px;font-size: 18px;font-weight: 500;"><b>Chole Kulche</b></h4></a>
+                    <h4 class="card-title" style="margin-top: -12px;">Rs. 85.00</h4>
+                    
+                    <!-- <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary text-uppercase" style="background:#febd23;color: #000;font-weight: 800;margin-top: -2px;">Order Now</a> -->
+                    <a  href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 148px; height: 42px;margin-top: -2px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;font-size: 14px;" >ORDER NOW </h4></a>
+                    
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane " id="italiano" role="tabpanel">
+            <div class="row justify-content-center">
+              <div class="col-md-6 col-lg-3">
+                  <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                    <div class="card-avatar" style="margin: -30px auto 0;">
+                      <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank">
+                      <img class="img " src="{% static 'img/menu/picinsert1.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                      </a>
+                    </div>
+                    <!-- <div class="card-body">
+                      <h4 class="card-category" style="margin-top:0px;"><b>Arrabbiata sauce Pasta</b></h4>
+                      <h4 class="card-title">₹ 140.00/160.00</h4>
+
+                      <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary " style="background:#febd23">Order Now</a>
+                    </div> -->
+
+                    <div class="card-body">
+                      <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"><h4 class="card-category text-uppercase" style="margin-top:-18px;font-size: 18px;font-weight: 500;"><b>Arrabbiata sauce Pasta</b></h4></a>
+                      <h4 class="card-title" style="margin-top: -12px;">Rs. 140.00</h4>
+                      
+                      <!-- <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary text-uppercase" style="background:#febd23;color: #000;font-weight: 800;margin-top: -2px;">Order Now</a> -->
+                      <a  href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 148px; height: 42px;margin-top: -2px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;font-size: 14px;" >ORDER NOW </h4></a>
+                      
+                  </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                      <div class="card-avatar" style="margin: -30px auto 0;">
+                        <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank">
+                        <img class="img " src="{% static 'img/menu/picinsert25.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                        </a>
+                      </div>
+                      <!-- <div class="card-body">
+                        <h4 class="card-category" style="margin-top:0px;"><b>Supreme cheese Pasta </b></h4>
+                        <h4 class="card-title">₹ 150.00/165.00</h4>
+
+                        <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary " style="background:#febd23">Order Now</a>
+                      </div> -->
+                      <div class="card-body">
+                        <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"><h4 class="card-category text-uppercase" style="margin-top:-18px;font-size: 18px;font-weight: 500;"><b>Supreme cheese Pasta </b></h4></a>
+                        <h4 class="card-title" style="margin-top: -12px;">Rs. 150.00</h4>
+                        
+                        <!-- <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary text-uppercase" style="background:#febd23;color: #000;font-weight: 800;margin-top: -2px;">Order Now</a> -->
+                        <a  href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 148px; height: 42px;margin-top: -2px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;font-size: 14px;" >ORDER NOW </h4></a>
+                        
+                    </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 col-lg-3">
+                      <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                        <div class="card-avatar" style="margin: -30px auto 0;">
+                          <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank">
+                          <img class="img " src="{% static 'img/menu/picinsert23.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                          </a>
+                        </div>
+                        <!-- <div class="card-body">
+                          <h4 class="card-category" style="margin-top:0px;"><b>Pesto Sauce <br> Pasta</b></h4>
+                          <h4 class="card-title">₹ 150.00</h4>
+                          <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary " style="background:#febd23">Order Now</a>
+                        </div> -->
+                        <div class="card-body">
+                          <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"><h4 class="card-category text-uppercase" style="margin-top:-18px;font-size: 18px;font-weight: 500;"><b>Pesto Sauce <br> Pasta</b></h4></a>
+                          <h4 class="card-title" style="margin-top: -12px;">Rs. 150.00</h4>
+                          
+                          <!-- <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary text-uppercase" style="background:#febd23;color: #000;font-weight: 800;margin-top: -2px;">Order Now</a> -->
+                          <a  href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 148px; height: 42px;margin-top: -2px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;font-size: 14px;" >ORDER NOW </h4></a>
+                          
+                      </div>
+
+
+                        
+                      </div>
+                    </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-lg-3 ml-auto mr-auto">
+                  <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                    <div class="card-avatar" style="margin: -30px auto 0;">
+                      <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank">
+                      <img class="img " src="{% static 'img/menu/picinsert13.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                      </a>
+                    </div>
+                    <!-- <div class="card-body">
+                      <h4 class="card-category" style="margin-top:0px;"><b>Lasagna</b></h4>
+                      <h4 class="card-title">₹ 170.00</h4>
+
+                      <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary " style="background:#febd23">Order Now</a>
+                    </div> -->
+
+                    <div class="card-body">
+                      <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"><h4 class="card-category text-uppercase" style="margin-top:-18px;font-size: 18px;font-weight: 500;"><b>Lasagna</b></h4></a>
+                      <h4 class="card-title" style="margin-top: -12px;">Rs. 170.00</h4>
+                      
+                      <!-- <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary text-uppercase" style="background:#febd23;color: #000;font-weight: 800;margin-top: -2px;">Order Now</a> -->
+                      <a  href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 148px; height: 42px;margin-top: -2px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;font-size: 14px;" >ORDER NOW </h4></a>
+                      
+                  </div>
+                  </div>
+                </div>
+
+            </div>
+          </div>
+          <div class="tab-pane " id="south" role="tabpanel">
+            <div class="row justify-content-center">
+              <div class="col-md-6 col-lg-3">
+                  <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                    <div class="card-avatar" style="margin: -30px auto 0;">
+                      <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank">
+                      <img class="img " src="{% static 'img/menu/picinsert27.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                      </a>
+                    </div>
+                    <!-- <div class="card-body">
+                      <h4 class="card-category" style="margin-top:0px;"><b>Sambar Rice</b></h4>
+                      <h4 class="card-title">₹ 85.00</h4>
+
+                      <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary " style="background:#febd23">Order Now</a>
+                    </div> -->
+
+                    <div class="card-body">
+                      <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"><h4 class="card-category text-uppercase" style="margin-top:-18px;font-size: 18px;font-weight: 500;"><b>Sambar Rice</b></h4></a>
+                      <h4 class="card-title" style="margin-top: -12px;">Rs. 85.00</h4>
+                      
+                      <!-- <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary text-uppercase" style="background:#febd23;color: #000;font-weight: 800;margin-top: -2px;">Order Now</a> -->
+                      <a  href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 148px; height: 42px;margin-top: -2px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;font-size: 14px;" >ORDER NOW </h4></a>
+                      
+                  </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                      <div class="card-avatar" style="margin: -30px auto 0;">
+                        <a href="https://foodya.dotpe.in/store/1/pickup">
+                        <img class="img" src="{% static 'img/menu/picinsert11.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                        </a>
+                      </div>
+                      <!-- <div class="card-body">
+                        <h4 class="card-category" style="margin-top:0px;"><b>Paper Dosa</b></h4>
+                        <h4 class="card-title">₹ 90.00</h4>
+                   
+                        <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary " style="background:#febd23">Order Now</a>
+                      </div> -->
+                      <div class="card-body">
+                        <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"><h4 class="card-category text-uppercase" style="margin-top:-18px;font-size: 18px;font-weight: 500;"><b>Paper Dosa</b></h4></a>
+                        <h4 class="card-title" style="margin-top: -12px;">Rs. 90.00</h4>
+                        
+                        <!-- <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary text-uppercase" style="background:#febd23;color: #000;font-weight: 800;margin-top: -2px;">Order Now</a> -->
+                        <a  href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 148px; height: 42px;margin-top: -2px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;font-size: 14px;" >ORDER NOW </h4></a>
+                        
+                    </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 col-lg-3">
+                      <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                        <div class="card-avatar" style="margin: -30px auto 0;">
+                          <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank">
+                          <img class="img " src="{% static 'img/menu/picinsert2.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                          </a>
+                        </div>
+                        <!-- <div class="card-body">
+                          <h4 class="card-category" style="margin-top:0px;"><b>Delhi-Masala Dosa</b></h4>
+                          <h4 class="card-title">₹ 120.00</h4>
+                 
+                          <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary " style="background:#febd23">Order Now</a>
+                        </div> -->
+                        <div class="card-body">
+                          <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"><h4 class="card-category text-uppercase" style="margin-top:-18px;font-size: 18px;font-weight: 500;"><b>Delhi-Masala Dosa</b></h4></a>
+                          <h4 class="card-title" style="margin-top: -12px;">Rs. 120.00</h4>
+                          
+                          <!-- <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary text-uppercase" style="background:#febd23;color: #000;font-weight: 800;margin-top: -2px;">Order Now</a> -->
+                          <a  href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 148px; height: 42px;margin-top: -2px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;font-size: 14px;" >ORDER NOW </h4></a>
+                          
+                      </div>
+                      </div>
+                    </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-md-6 col-lg-3">
+                  <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                    <div class="card-avatar" style="margin: -30px auto 0;">
+                      <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank">
+                      <img class="img " src="{% static 'img/menu/picinsert3.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                      </a>
+                    </div>
+                    <!-- <div class="card-body">
+                      <h4 class="card-category" style="margin-top:0px;"><b>Rava Dosa</b></h4>
+                      <h4 class="card-title">₹ 140.00</h4>
+
+                      <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"  class="btn btn-primary " style="background:#febd23">Order Now</a>
+                    </div> -->
+                    <div class="card-body">
+                      <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"><h4 class="card-category text-uppercase" style="margin-top:-18px;font-size: 18px;font-weight: 500;"><b>Rava Dosa</b></h4></a>
+                      <h4 class="card-title" style="margin-top: -12px;">Rs. 140.00</h4>
+                      
+                      <!-- <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary text-uppercase" style="background:#febd23;color: #000;font-weight: 800;margin-top: -2px;">Order Now</a> -->
+                      <a  href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 148px; height: 42px;margin-top: -2px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;font-size: 14px;" >ORDER NOW </h4></a>
+                      
+                  </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                      <div class="card-avatar" style="margin: -30px auto 0;">
+                        <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank">
+                        <img class="img " src="{% static 'img/menu/picinsert10.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                        </a>
+                      </div>
+                      <!-- <div class="card-body">
+                        <h4 class="card-category" style="margin-top:0px;"><b>Mysore Masala</b></h4>
+                        <h4 class="card-title">₹ 140.00</h4>
+                       <a href="https://foodya.dotpe.in/store/1/pickup" class="btn btn-primary " style="background:#febd23">Order Now</a>
+                      </div> -->
+
+                      <div class="card-body">
+                        <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"><h4 class="card-category text-uppercase" style="margin-top:-18px;font-size: 18px;font-weight: 500;"><b>Mysore Masala</b></h4></a>
+                        <h4 class="card-title" style="margin-top: -12px;">Rs. 140.00</h4>
+                        
+                        <!-- <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary text-uppercase" style="background:#febd23;color: #000;font-weight: 800;margin-top: -2px;">Order Now</a> -->
+                        <a  href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 148px; height: 42px;margin-top: -2px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;font-size: 14px;" >ORDER NOW </h4></a>
+                        
+                    </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 col-lg-3">
+                      <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                        <div class="card-avatar" style="margin: -30px auto 0;">
+                          <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank">
+                          <img class="img " src="{% static 'img/menu/picinsert8.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                          </a>
+                        </div>
+                        <!-- <div class="card-body">
+                          <h4 class="card-category" style="margin-top:0px;"><b>Cheese Dosa</b></h4>
+                          <h4 class="card-title">₹ 145.00</h4>
+                        
+                          <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary" style="background:#febd23">Order Now</a>
+                        </div> -->
+                        <div class="card-body">
+                          <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"><h4 class="card-category text-uppercase" style="margin-top:-18px;font-size: 18px;font-weight: 500;"><b>Cheese Dosa</b></h4></a>
+                          <h4 class="card-title" style="margin-top: -12px;">Rs. 145.00</h4>
+                          
+                          <!-- <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary text-uppercase" style="background:#febd23;color: #000;font-weight: 800;margin-top: -2px;">Order Now</a> -->
+                          <a  href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 148px; height: 42px;margin-top: -2px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;font-size: 14px;" >ORDER NOW </h4></a>
+                          
+                      </div>
+                      </div>
+                    </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-md-6 col-lg-3">
+                  <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                    <div class="card-avatar" style="margin: -30px auto 0;">
+                      <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank">
+                      <img class="img" src="{% static 'img/menu/picinsert16.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                      </a>
+                    </div>
+                    <!-- <div class="card-body">
+                      <h4 class="card-category" style="margin-top:0px;"><b>Idli Platter Thali</b></h4>
+                      <h4 class="card-title">₹ 150.00</h4>
+
+                      <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary " style="background:#febd23">Order Now</a>
+                    </div> -->
+                    <div class="card-body">
+                      <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"><h4 class="card-category text-uppercase" style="margin-top:-18px;font-size: 18px;font-weight: 500;"><b>Idli Platter Thali</b></h4></a>
+                      <h4 class="card-title" style="margin-top: -12px;">Rs. 150.00</h4>
+                      
+                      <!-- <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary text-uppercase" style="background:#febd23;color: #000;font-weight: 800;margin-top: -2px;">Order Now</a> -->
+                      <a  href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 148px; height: 42px;margin-top: -2px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;font-size: 14px;" >ORDER NOW </h4></a>
+                      
+                  </div>
+
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                      <div class="card-avatar" style="margin: -30px auto 0;">
+                        <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank">
+                        <img class="img " src="{% static 'img/menu/picinsert11.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                        </a>
+                      </div>
+                      <!-- <div class="card-body">
+                        <h4 class="card-category" style="margin-top:0px;"><b>South Indian Thali</b></h4>
+                        <h4 class="card-title">₹ 170.00</h4>
+
+                        <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary " style="background:#febd23">Order Now</a>
+                      </div> -->
+                      <div class="card-body">
+                        <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"><h4 class="card-category text-uppercase" style="margin-top:-18px;font-size: 18px;font-weight: 500;"><b>South Indian Thali</b></h4></a>
+                        <h4 class="card-title" style="margin-top: -12px;">Rs. 170.00</h4>
+                        
+                        <!-- <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary text-uppercase" style="background:#febd23;color: #000;font-weight: 800;margin-top: -2px;">Order Now</a> -->
+                        <a  href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 148px; height: 42px;margin-top: -2px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;font-size: 14px;" >ORDER NOW </h4></a>
+                        
+                    </div>
+
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="tab-pane justify-content-center" id="continental" role="tabpanel">
+            <div class="row justify-content-center">
+              <div class="col-md-6 col-lg-3">
+                  <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                    <div class="card-avatar" style="margin: -30px auto 0;">
+                      <a href="https://foodya.dotpe.in/store/1/pickup">
+                      <img class="img " src="{% static 'img/menu/picinsert33.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                      </a>
+                    </div>
+                    <!-- <div class="card-body">
+                      <h4 class="card-category"><b>Panini Sandwich</b></h4>
+                      <h4 class="card-title">₹ 165.00</h4>
+
+                      <a href="https://foodya.dotpe.in/store/1/pickup" class="btn btn-primary " style="background:#febd23">Order Now</a>
+                    </div> -->
+
+                    <div class="card-body">
+                      <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"><h4 class="card-category text-uppercase" style="margin-top:-18px;font-size: 18px;font-weight: 500;"><b>Panini <br>Sandwich</b></h4></a>
+                      <h4 class="card-title" style="margin-top: -12px;">Rs. 165.00</h4>
+                      
+                      <!-- <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary text-uppercase" style="background:#febd23;color: #000;font-weight: 800;margin-top: -2px;">Order Now</a> -->
+                      <a  href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 148px; height: 42px;margin-top: -2px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;font-size: 14px;" >ORDER NOW </h4></a>
+                      
+                  </div>
+
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                      <div class="card-avatar" style="margin: -30px auto 0;">
+                        <a href="https://foodya.dotpe.in/store/1/pickup">
+                        <img class="img " src="{% static 'img/menu/picinsert32.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                        </a>
+                      </div>
+                      <!-- <div class="card-body">
+                        <h4 class="card-category" style="margin-top:0px;"><b>Cottage Cheese Sandwich</b></h4>
+                        <h4 class="card-title">₹ 130.00</h4>
+                      
+                        <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary " style="background:#febd23">Order Now</a>
+                      </div> -->
+
+                      <div class="card-body">
+                        <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"><h4 class="card-category text-uppercase" style="margin-top:-18px;font-size: 18px;font-weight: 500;"><b>Cottage Cheese Sandwich</b></h4></a>
+                        <h4 class="card-title" style="margin-top: -12px;">Rs. 130.00</h4>
+                        
+                        <!-- <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary text-uppercase" style="background:#febd23;color: #000;font-weight: 800;margin-top: -2px;">Order Now</a> -->
+                        <a  href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 148px; height: 42px;margin-top: -2px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;font-size: 14px;" >ORDER NOW </h4></a>
+                        
+                    </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 col-lg-3">
+                      <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                        <div class="card-avatar" style="margin: -30px auto 0;">
+                          <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank">
+                          <img class="img " src="{% static 'img/menu/picinsert31.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                          </a>
+                        </div>
+                        <!-- <div class="card-body">
+                          <h4 class="card-category" style="margin-top:0px;"><b>Chilli Cheese Sandwich</b></h4>
+                          <h4 class="card-title">₹ 140.00</h4>
+                       
+                          <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary " style="background:#febd23">Order Now</a>
+                        </div> -->
+                        <div class="card-body">
+                          <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"><h4 class="card-category text-uppercase" style="margin-top:-18px;font-size: 18px;font-weight: 500;"><b>Chilli Cheese Sandwich</b></h4></a>
+                          <h4 class="card-title" style="margin-top: -12px;">Rs. 140.00</h4>
+                          
+                          <!-- <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary text-uppercase" style="background:#febd23;color: #000;font-weight: 800;margin-top: -2px;">Order Now</a> -->
+                          <a  href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 148px; height: 42px;margin-top: -2px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;font-size: 14px;" >ORDER NOW </h4></a>
+                          
+                      </div>
+
+
+                      </div>
+                    </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-md-6 col-lg-3">
+                  <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                    <div class="card-avatar" style="margin: -30px auto 0;">
+                      <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank">
+                      <img class="img " src="{% static 'img/menu/picinsert5.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                      </a>
+                    </div>
+                    <!-- <div class="card-body">
+                      <h4 class="card-category" ><b>Manhattan Burger</b></h4>
+                      <h4 class="card-title">₹ 150.00</h4>
+
+                      <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary " style="background:#febd23">Order Now</a>
+                    </div> -->
+
+                    <div class="card-body">
+                      <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"><h4 class="card-category text-uppercase" style="margin-top:-18px;font-size: 18px;font-weight: 500;"><b>Manhattan<br> Burger</b></h4></a>
+                      <h4 class="card-title" style="margin-top: -12px;">Rs. 150.00</h4>
+                      
+                      <!-- <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary text-uppercase" style="background:#febd23;color: #000;font-weight: 800;margin-top: -2px;">Order Now</a> -->
+                      <a  href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 148px; height: 42px;margin-top: -2px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;font-size: 14px;" >ORDER NOW </h4></a>
+                      
+                  </div>
+                  
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                      <div class="card-avatar" style="margin: -30px auto 0;">
+                        <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank">
+                        <img class="img " src="{% static 'img/menu/picinsert4.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                        </a>
+                      </div>
+                      <!-- <div class="card-body">
+                        <h4 class="card-category" style="margin-top:0px;"><b>Soho Chicken Burger</b></h4>
+                        <h4 class="card-title">₹ 160.00</h4>
+                   
+                      <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary " style="background:#febd23">Order Now</a>
+                      </div> -->
+                      <div class="card-body">
+                        <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"><h4 class="card-category text-uppercase" style="margin-top:-18px;font-size: 18px;font-weight: 500;"><b>Soho Chicken Burger</b></h4></a>
+                        <h4 class="card-title" style="margin-top: -12px;">Rs. 160.00</h4>
+                        
+                        <!-- <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary text-uppercase" style="background:#febd23;color: #000;font-weight: 800;margin-top: -2px;">Order Now</a> -->
+                        <a  href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 148px; height: 42px;margin-top: -2px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;font-size: 14px;" >ORDER NOW </h4></a>
+                        
+                    </div>
+
+
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 col-lg-3">
+                      <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                        <div class="card-avatar" style="margin: -30px auto 0;">
+                          <a href="https://foodya.dotpe.in/store/1/pickup">
+                          <img class="img " src="{% static 'img/menu/picinsert15.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                          </a>
+                        </div>
+                        <!-- <div class="card-body">
+                          <h4 class="card-category"><b>Peri Peri Fries</b></h4>
+                          <h4 class="card-title">₹ 110.00</h4>
+                          <a href="https://foodya.dotpe.in/store/1/pickup" class="btn btn-primary " style="background:#febd23">Order Now</a>
+                        </div> -->
+                        <div class="card-body">
+                          <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"><h4 class="card-category text-uppercase" style="margin-top:-18px;font-size: 18px;font-weight: 500;"><b>Peri Peri <br>Fries</b></h4></a>
+                          <h4 class="card-title" style="margin-top: -12px;">Rs. 110.00</h4>
+                          
+                          <!-- <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary text-uppercase" style="background:#febd23;color: #000;font-weight: 800;margin-top: -2px;">Order Now</a> -->
+                          <a  href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 148px; height: 42px;margin-top: -2px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;font-size: 14px;" >ORDER NOW </h4></a>
+                          
+                      </div>
+                      </div>
+                    </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-md-6 col-lg-3">
+                  <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                    <div class="card-avatar" style="margin: -30px auto 0;">
+                      <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank">
+                      <img class="img " src="{% static 'img/menu/picinsert13.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                      </a>
+                    </div>
+                    <!-- <div class="card-body">
+                      <h4 class="card-category"><b>Mexico city Fries</b></h4>
+                      <h4 class="card-title">₹ 120.00</h4>
+
+                      <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary " style="background:#febd23">Order Now</a>
+                    </div> -->
+
+                    <div class="card-body">
+                      <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"><h4 class="card-category text-uppercase" style="margin-top:-18px;font-size: 18px;font-weight: 500;"><b>Mexico city <br>Fries</b></h4></a>
+                      <h4 class="card-title" style="margin-top: -12px;">Rs. 120.00</h4>
+                      
+                      <!-- <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary text-uppercase" style="background:#febd23;color: #000;font-weight: 800;margin-top: -2px;">Order Now</a> -->
+                      <a  href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 148px; height: 42px;margin-top: -2px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;font-size: 14px;" >ORDER NOW </h4></a>
+                      
+                  </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                      <div class="card-avatar" style="margin: -30px auto 0;">
+                        <a href="https://foodya.dotpe.in/store/1/pickup">
+                        <img class="img " src="{% static 'img/menu/picinsert12.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                        </a>
+                      </div>
+                      <!-- <div class="card-body">
+                        <h4 class="card-category"><b>Cheezy Fries</b></h4>
+                        <h4 class="card-title">₹ 130.00</h4>
+
+                        <a href="" class="btn btn-primary " style="background:#febd23">Order Now</a>
+                      </div> -->
+
+                      <div class="card-body">
+                        <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"><h4 class="card-category text-uppercase" style="margin-top:-18px;font-size: 18px;font-weight: 500;"><b>Cheezy <br>Fries</b></h4></a>
+                        <h4 class="card-title" style="margin-top: -12px;">Rs. 130.00</h4>
+                        
+                        <!-- <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary text-uppercase" style="background:#febd23;color: #000;font-weight: 800;margin-top: -2px;">Order Now</a> -->
+                        <a  href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 148px; height: 42px;margin-top: -2px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;font-size: 14px;" >ORDER NOW </h4></a>
+                        
+                    </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 col-lg-3">
+                      <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                        <div class="card-avatar" style="margin: -30px auto 0;">
+                          <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank">
+                          <img class="img " src="{% static 'img/menu/picinsert19.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                          </a>
+                        </div>
+                        <!-- <div class="card-body">
+                          <h4 class="card-category" style="margin-top:0px;"><b>Paneer Makhni Momos</b></h4>
+                          <h4 class="card-title">₹ 140.00</h4>
+
+                          <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary " style="background:#febd23">Order Now</a>
+                        </div> -->
+                        <div class="card-body">
+                          <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"><h4 class="card-category text-uppercase" style="margin-top:-18px;font-size: 18px;font-weight: 500;"><b>Paneer Makhni <br>Momos</b></h4></a>
+                          <h4 class="card-title" style="margin-top: -12px;">Rs. 140.00</h4>
+                          
+                          <!-- <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary text-uppercase" style="background:#febd23;color: #000;font-weight: 800;margin-top: -2px;">Order Now</a> -->
+                          <a  href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 148px; height: 42px;margin-top: -2px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;font-size: 14px;" >ORDER NOW </h4></a>
+                          
+                      </div>
+                      </div>
+                    </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-md-6 col-lg-3">
+                  <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                    <div class="card-avatar" style="margin: -30px auto 0;">
+                      <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank">
+                      <img class="img " src="{% static 'img/menu/picinsert18.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                      </a>
+                    </div>
+                    <!-- <div class="card-body">
+                      <h4 class="card-category" style="margin-top:0px;"><b>Butter Chicken Momos</b></h4>
+                      <h4 class="card-title">₹ 160.00</h4>
+
+                      <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary " style="background:#febd23">Order Now</a>
+                    </div> -->
+
+                    <div class="card-body">
+                      <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"><h4 class="card-category text-uppercase" style="margin-top:-18px;font-size: 18px;font-weight: 500;"><b>Butter Chicken <br> Momos</b></h4></a>
+                      <h4 class="card-title" style="margin-top: -12px;">Rs. 160.00</h4>
+                      
+                      <!-- <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary text-uppercase" style="background:#febd23;color: #000;font-weight: 800;margin-top: -2px;">Order Now</a> -->
+                      <a  href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 148px; height: 42px;margin-top: -2px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;font-size: 14px;" >ORDER NOW </h4></a>
+                      
+                  </div>
+                  </div>
+                </div>
+
+            </div>
+          </div>
+
+
+          <div class="tab-pane " id="drinks" role="tabpanel">
+            <div class="row justify-content-center">
+              <div class="col-md-6 col-lg-3">
+                  <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                    <div class="card-avatar" style="margin: -30px auto 0;">
+                      <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank">
+                      <img class="img " src="{% static 'img/menu/picinsert39.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                      </a>
+                    </div>
+                    <!-- <div class="card-body">
+                      <h4 class="card-category" style="margin-top:0px;"><b>Only Oreo Shake</b></h4>
+                      <h4 class="card-title">₹ 130.00</h4>
+
+                      <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary " style="background:#febd23">Order Now</a>
+                    </div> -->
+                    <div class="card-body">
+                      <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"><h4 class="card-category text-uppercase" style="margin-top:-18px;font-size: 18px;font-weight: 500;"><b>Only Oreo <br>Shake</b></h4></a>
+                      <h4 class="card-title" style="margin-top: -12px;">Rs. 130.00</h4>
+                      
+                      <!-- <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary text-uppercase" style="background:#febd23;color: #000;font-weight: 800;margin-top: -2px;">Order Now</a> -->
+                      <a  href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 148px; height: 42px;margin-top: -2px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;font-size: 14px;" >ORDER NOW </h4></a>
+                      
+                  </div>
+
+
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                      <div class="card-avatar" style="margin: -30px auto 0;">
+                        <a href="https://foodya.dotpe.in/store/1/pickup">
+                        <img class="img " src="{% static 'img/menu/picinsert36.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                        </a>
+                      </div>
+                      <!-- <div class="card-body">
+                        <h4 class="card-category" style="margin-top:0px;"><b>Kitkat Shake</b></h4>
+                        <h4 class="card-title">₹ 130.00</h4>
+
+                        <a href="https://foodya.dotpe.in/store/1/pickup" class="btn btn-primary " style="background:#febd23">Order Now</a>
+                      </div> -->
+
+                      <div class="card-body">
+                        <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"><h4 class="card-category text-uppercase" style="margin-top:-18px;font-size: 18px;font-weight: 500;"><b>Kitkat <br> Shake</b></h4></a>
+                        <h4 class="card-title" style="margin-top: -12px;">Rs. 130.00</h4>
+                        
+                        <!-- <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary text-uppercase" style="background:#febd23;color: #000;font-weight: 800;margin-top: -2px;">Order Now</a> -->
+                        <a  href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 148px; height: 42px;margin-top: -2px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;font-size: 14px;" >ORDER NOW </h4></a>
+                        
+                    </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 col-lg-3">
+                      <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                        <div class="card-avatar" style="margin: -30px auto 0;">
+                          <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank">
+                          <img class="img" src="{% static 'img/menu/picinsert34.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                          </a>
+                        </div>
+                        <!-- <div class="card-body">
+                          <h4 class="card-category" style="margin-top:0px;"><b>Banana-Peanut Butter</b></h4>
+                          <h4 class="card-title">₹ 150.00</h4>
+
+                          <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary " style="background:#febd23">Order Now</a>
+                        </div> -->
+
+                        <div class="card-body">
+                          <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"><h4 class="card-category text-uppercase" style="margin-top:-18px;font-size: 18px;font-weight: 400;"><b>Banana-Peanut Butter</b></h4></a>
+                          <h4 class="card-title" style="margin-top: -12px;">Rs. 150.00</h4>
+                          
+                          <!-- <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary text-uppercase" style="background:#febd23;color: #000;font-weight: 800;margin-top: -2px;">Order Now</a> -->
+                          <a  href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 148px; height: 42px;margin-top: -2px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;font-size: 14px;" >ORDER NOW </h4></a>
+                          
+                      </div>
+                      </div>
+                    </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-md-6 col-lg-3">
+                  <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                    <div class="card-avatar" style="margin: -30px auto 0;">
+                      <a href="https://foodya.dotpe.in/store/1/pickup">
+                      <img class="img " src="{% static 'img/menu/picinsert40.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                      </a>
+                    </div>
+                    <!-- <div class="card-body">
+                      <h4 class="card-category" style="margin-top:0px;"><b>Avocado Shake</b></h4>
+                      <h4 class="card-title">₹ 210.00</h4>
+
+                      <a href="https://foodya.dotpe.in/store/1/pickup" class="btn btn-primary " style="background:#febd23">Order Now</a>
+                    </div> -->
+                    <div class="card-body">
+                      <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"><h4 class="card-category text-uppercase" style="margin-top:-18px;font-size: 18px;font-weight: 500;"><b>Avocado <br>Shake</b></h4></a>
+                      <h4 class="card-title" style="margin-top: -12px;">Rs. 210.00</h4>
+                      
+                      <!-- <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary text-uppercase" style="background:#febd23;color: #000;font-weight: 800;margin-top: -2px;">Order Now</a> -->
+                      <a  href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 148px; height: 42px;margin-top: -2px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;font-size: 14px;" >ORDER NOW </h4></a>
+                      
+                  </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                      <div class="card-avatar" style="margin: -30px auto 0;">
+                        <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank">
+                        <img class="img " src="{% static 'img/menu/picinsert39.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                        </a>
+                      </div>
+                      <!-- <div class="card-body">
+                        <h4 class="card-category" style="margin-top:0px;"><b>Lazy Chocolate Shake</b></h4>
+                        <h4 class="card-title">₹ 95.00</h4>
+
+                        <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary " style="background:#febd23">Order Now</a>
+                      </div> -->
+                      <div class="card-body">
+                        <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"><h4 class="card-category text-uppercase" style="margin-top:-18px;font-size: 18px;font-weight: 500;"><b>Lazy Chocolate Shake</b></h4></a>
+                        <h4 class="card-title" style="margin-top: -12px;">Rs. 95.00</h4>
+                        
+                        <!-- <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary text-uppercase" style="background:#febd23;color: #000;font-weight: 800;margin-top: -2px;">Order Now</a> -->
+                        <a  href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 148px; height: 42px;margin-top: -2px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;font-size: 14px;" >ORDER NOW </h4></a>
+                        
+                    </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-3">
+                      <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                        <div class="card-avatar" style="margin: -30px auto 0;">
+                          <a href="https://foodya.dotpe.in/store/1/pickup">
+                          <img class="img " src="{% static 'img/menu/picinsert37.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                          </a>
+                        </div>
+                        <!-- <div class="card-body">
+                          <h4 class="card-category" style="margin-top:0px;"><b>Mango-Saffron Lassi</b></h4>
+                          <h4 class="card-title">₹ 120.00</h4>
+
+                          <a href="https://foodya.dotpe.in/store/1/pickup" class="btn btn-primary " style="background:#febd23">Order Now</a>
+                        </div> -->
+
+                        <div class="card-body">
+                          <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"><h4 class="card-category text-uppercase" style="margin-top:-18px;font-size: 18px;font-weight: 500;"><b>Mango-Saffron Lassi</b></h4></a>
+                          <h4 class="card-title" style="margin-top: -12px;">Rs. 120.00</h4>
+                          
+                          <!-- <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary text-uppercase" style="background:#febd23;color: #000;font-weight: 800;margin-top: -2px;">Order Now</a> -->
+                          <a  href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 148px; height: 42px;margin-top: -2px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;font-size: 14px;" >ORDER NOW </h4></a>
+                          
+                      </div>
+                      </div>
+                    </div>
+
+            </div>
+            <div class="row justify-content-center">
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                      <div class="card-avatar" style="margin: -30px auto 0;">
+                        <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank">
+                        <img class="img " src="{% static 'img/menu/picinsert38.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                        </a>
+                      </div>
+                      <!-- <div class="card-body">
+                        <h4 class="card-category" style="margin-top:0px;"><b>UP Masala Chach</b></h4>
+                        <h4 class="card-title">₹ 120.00</h4>
+
+                        <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary " style="background:#febd23">Order Now</a>
+                      </div> -->
+
+                      <div class="card-body">
+                        <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank"><h4 class="card-category text-uppercase" style="margin-top:-18px;font-size: 18px;font-weight: 500;"><b>UP Masala Chach</b></h4></a>
+                        <h4 class="card-title" style="margin-top: -12px;">Rs. 120.00</h4>
+                        
+                        <!-- <a href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn btn-primary text-uppercase" style="background:#febd23;color: #000;font-weight: 800;margin-top: -2px;">Order Now</a> -->
+                        <a  href="https://foodya.dotpe.in/store/1/pickup" target="_blank" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 148px; height: 42px;margin-top: -2px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;font-size: 14px;" >ORDER NOW </h4></a>
+                        
+                    </div>
+                    </div>
+                  </div>
+
+
+                  
+                <!-- <div class="col-md-6 col-lg-3 ml-auto mr-auto">
+                    <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                      <div class="card-avatar" style="margin: -30px auto 0;">
+                        <a href="">
+                        <img class="img " src="{% static 'img/menu/picinsert1.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                        </a>
+                      </div>
+                      <div class="card-body">
+                        <h4 class="card-category" style="margin-top:0px;"><b>Ghar vali Chai</b></h4>
+                        <h4 class="card-title">₹ 50.00</h4>
+
+                        <a href="" class="btn btn-primary " style="background:#febd23">Order Now</a>
+                      </div>
+                    </div>
+                  </div> -->
+
+
+            </div>
+          </div>
+          <!-- <div class="tab-pane " id="extras" role="tabpanel">
+            <div class="row ">
+              <div class="col-md-6 col-lg-3 ml-auto mr-auto">
+                  <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                    <div class="card-avatar" style="margin: -30px auto 0;">
+                      <a href="">
+                      <img class="img " src="{% static 'img/menu/picinsert1.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                      </a>
+                    </div>
+                    <div class="card-body">
+                      <h4 class="card-category" style="margin-top:0px;"><b>Ghar ka dabba</b></h4>
+                      <h4 class="card-title">₹ 89.00</h4>
+
+                      <a href="" class="btn btn-primary " style="background:#febd23">Order Now</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3 ml-auto mr-auto">
+                    <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                      <div class="card-avatar" style="margin: -30px auto 0;">
+                        <a href="">
+                        <img class="img " src="{% static 'img/menu/picinsert1.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                        </a>
+                      </div>
+                      <div class="card-body">
+                        <h4 class="card-category" style="margin-top:0px;"><b>Ghar ka dabba</b></h4>
+                        <h4 class="card-title">₹ 89.00</h4>
+
+                        <a href="" class="btn btn-primary " style="background:#febd23">Order Now</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 col-lg-3 ml-auto mr-auto">
+                      <div class="card card-profile" style="background: url('{% static 'img/card.png' %}');box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%)">
+                        <div class="card-avatar" style="margin: -30px auto 0;">
+                          <a href="">
+                          <img class="img " src="{% static 'img/menu/picinsert1.png' %}" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                          </a>
+                        </div>
+                        <div class="card-body">
+                          <h4 class="card-category" style="margin-top:0px;"><b>Ghar ka dabba</b></h4>
+                          <h4 class="card-title">₹ 89.00</h4>
+
+                          <a href="" class="btn btn-primary " style="background:#febd23">Order Now</a>
+                        </div>
+                      </div>
+                    </div>
+            </div>
+
+          </div> -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="projects-3" style="padding: 80px 0 10px 0" id="aboutus">
+
+  <div class="section-story-overview">
+    <div class="row">
+      <div class="col-md-6">
+        <!-- <div class="image-container image-left image-border" style="background-image: url('{% static 'img/momos.png' %}')">
+
+        </div> -->
+        <img src="{% static 'img/momos.png' %}" style="max-width:75%" alt="">
+      </div>
+      <div class="col-md-5">
+        <!-- First image on the right side, above the article -->
+        <div class="" style="height:auto">
+          <div  style="padding: 20px 60px; height:auto">
+
+            <h2 class="title"><b><span style="background-color: #febd23;;border-radius:50%;padding: 10px;padding-bottom: 3px;padding-right: 3px;padding-top: 5px;">A</span>BOUT US</b></h2>
+            <!-- <span style="color:black; font-size: 35px;"class="badge">A</span> -->
+            <!-- <h4 class="card-title">Coco Kelley</h4> -->
+            <p style="margin-top: -70px;"><b>
+              FoodYa brings you the
+  authentic taste of North India, South
+  India, Italian food, and much more! We
+  are known for making food that makes
+  both heart and stomach happy. Our
+  freshly cooked food is irresistible. Thanks to
+  our secret recipes and ingredients.</b>
+            </p>
+          </div>
+        </div>
+        <!-- <h6 class="category text-primary">Design</h6>
+        <h4 class="card-title">Coco Kelley</h4>
+        <p>
+          Amber Lewis’s interior design blog takes you inside the creative workings of her Los Angeles–based studio. Keep an eye on this website for an industry insider’s point of view.
+        </p> -->
+      </div>
+    </div>
+  </div>
+
+<!-- </div> -->
+</div>
+<div class="projects-3 project3-pad" id="aboutchefs" style="">
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<ol class="carousel-indicators" style="bottom:-50px;">
+<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active" style="background:rgb(0 0 0 /50%);"></li>
+<li data-target="#carouselExampleIndicators" data-slide-to="1" style="background:rgb(0 0 0 /50%);"></li>
+<li data-target="#carouselExampleIndicators" data-slide-to="2" style="background:rgb(0 0 0 /50%);"></li>
+</ol>
+<div class="carousel-inner" style="box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 0%)">
+<div class="carousel-item active">
+  <div class="row">
+    <div class="col-md-6">
+      <h1 class="mt-4 pt-4 pl-4 pr-4 pad-top"><b><span style="">O</span>UR CHEFS</b></h1>
+    <p class="mt-4 pt-4 pl-4 pr-4"><b>Here at the FoodYa family, we have tried to give the &#39;homely&#39; touch to our Indian menu, so
+      people can enjoy and relish our food with a homely and an authentic Indian vibe. The pure desi
+      ghee tadka in dal, the typical ghar wali chai, the pind-style chole-bhature, we use authentic
+      Indian masalas and spices and recipes to ensure that the taste is really of India!</b></p>
+    </div>
+    <div class="col-md-6" >
+      <img src="{% static 'img/chef.png' %}" class="float-right" style="width:60%" alt="">
+    </div>
+  </div>
+</div>
+<div class="carousel-item">
+  <div class="row">
+    <div class="col-md-6">
+      <h1 class="mt-4 pt-4 pl-4 pr-4 pad-top"><b>OUR CHEFS</b></h1>
+    <p class="mt-4 pt-4 pl-4 pr-4"><b>Being a chef is a very challenging task and the biggest challenge is to make people happy with our
+      food. To achieve that, I ensure that when we prepare a dish, we are not just making food, we
+      are spreading happiness, and the taste must reflect it. My passion for cooking is what I try to
+      bring to the table. I hope that we continue to spread happiness through our food for our Foodya
+      Family.</b></p>
+    </div>
+    <div class="col-md-6"  >
+      <img src="{% static 'img/chef-min.png' %}" class="float-right" style="width:60%" alt="">
+    </div>
+  </div>
+</div>
+<div class="carousel-item">
+  <div class="row">
+    <div class="col-md-6">
+      <h1 class="mt-4 pt-4 pl-4 pr-4 pad-top"><b>OUR CHEFS</b></h1>
+    <p class="mt-4 pt-4 pl-4 pr-4"><b>Our main goal is to provide good-quality food and dishes to our customers that have been prepared with authentic recipes and ingredients and give a homely taste.</b></p>
+    </div>
+    <div class="col-md-6" >
+      <img src="{% static 'img/che3.png' %}" class="float-right" style="width:60%" alt="">
+    </div>
+  </div>
+</div>
+</div>
+<!-- <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+<span class="sr-only">Previous</span>
+</a>
+<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+<span class="sr-only">Next</span>
+</a> -->
+</div>
+</div>
+<div class="projects-3 project3-pad" id="review">
+  <h1 class="title text-center"><span style="background-color: #febd23;;border-radius:50%;padding: 10px;padding-bottom: 3px;padding-right: 3px;padding-top: 5px;">C</span>USTOMER <br>REVIEWS</h1>
+  
+
+<div class="container">
+  <div id="carouselExampleControls" class="carousel vert slide" data-ride="carousel" data-interval="3000">
+      <ol class="carousel-indicators indicators-align" style=" ">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active" style="background:rgb(0 0 0 /50%);"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1" style="background:rgb(0 0 0 /50%);"></li>
+
+      </ol>
+      <div class="carousel-inner" style="box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 0%); ">
+          <div class="carousel-item active">
+              <img class="" src="{% static 'img/tee.png' %}" alt="First slide">
+          </div>
+          <div class="carousel-item">
+              <img class="" src="{% static 'img/nehit.png' %}" alt="Second slide">
+          </div>
+
+      </div>
+      <!-- <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+      </a> -->
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+<div class="wrapper" id="contactus">
+
+
+  <!-- <div class="page-header-image" data-parallax="true">
+  </div> -->
+
+    <div class="row">
+      <div id="Corporate-Luncheons" class="col-md-8">
+        <h2 class="title text-dark pl-4" style="font-size: 50px;">Looking for Corporate Luncheons?</h2>
+        <h2 class="description text-dark pl-4">Get in Touch for our <span style="color:#febd23; font-weight: 900;">Custom Meal Packages</span> for Offices & Occasions.</h2>
+        <form action="" method="POST" autocomplete="off">
+        <div class="row justify-content-around">
+
+        <div class="col-md-12"><a target="_blank" href="https://www.zomato.com/ncr/foodya-sector-63-noida" class="btn pl-4 ml-4" style="background:#febd23; color:black;  clip-path: polygon(0% 0%, 88% 0, 100% 100%, 0% 100%); width: 170px; height: 50px;"><h4 class="title text-dark text-align-center " style="margin-top:-30px;margin-top:-28px; margin-left:-12px;" >Contact Us</h4></a></div>
+        <div class="col-md-6">
+
+                    
+                    
+                      {% csrf_token %}
+                     
+                      <div class="form-group px-4 mb-4 mt-3">
+                        <!-- <label for="formGroupExampleInput">Name</label> -->
+                        <!-- <input   style="border: 3px solid #febd23;" type="text" class="form-control" id="name" placeholder="Your name"> -->
+                            {{form.name}}
+                      </div>
+
+                      <div class="form-group px-4">
+                        <!-- <label for="exampleInputEmail1">Email address</label> -->
+                        <!-- <input  style="border: 3px solid #febd23;" type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter email"> -->
+                        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                        {{form.email}}
+                      </div>
+                    
+                   
+                      
+                        
+                      
+                        
+                      
+                    
+
+
+           <!-- <button id="btn2">Hello</button> -->
+           <!-- <p class="description text-dark pt-4 pl-4" style="margin-top:-26px"><b style="font-weight:500; margin-top:-8px;">Looking for Corporate Luncheons?<br></b><a style="color: #E5A50C;font-weight: 900;" href="">Reach Us!</a></p> -->
+          
+        </div>
+        <div class="col-md-6">
+          <div class="form-group px-4 mb-4 mt-3">
+            <!-- <label for="formGroupExampleInput">Name</label> -->
+            <!-- <input   style="border: 3px solid #febd23;" type="text" class="form-control" id="name" placeholder="Your name"> -->
+                {{form.phone}}
+          </div>
+
+          <div class="form-group px-4">
+            <!-- <label for="exampleInputEmail1">Email address</label> -->
+            <!-- <input  style="border: 3px solid #febd23;" type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter email"> -->
+            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+            {{form.org}}
+          </div>
+        </div>
+        <!-- <div class="col-md-6 header-Arrow">
+          <img src="{% static 'img/Arrow.png' %}" style="width: 80%;" class="mt-4 pt-4" alt="">
+        </div> -->
+          </div>
+
+          <div class="row justify-content-center">
+                          
+            <div class="col-md-12">
+              <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary ml-3 " style="background-color:#febd23;border-radius: 10px;">Submit</button>
+              </div>
+            </div>
+          </form>
+          
+        </div>
+        <p  class="description text-dark pt-4 mt-4 pl-4"><i>“Good food is not a privilege... <br><b style="font-weight:600;">IT’S YOUR RIGHT. ”</b></i></p>
+      </div>
+
+
+
+      <div class="col-md-4 header-img-left" >
+        <img src="{% static 'img/foodyacontactus.png' %}"  class="header-img" alt="">
+        <!-- <h1 class="title text-dark">About Us</h1>
+        <h4 class="description text-dark">Meet the amazing team behind this project and find out more about how we work.</h4> -->
+      </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <footer class="footer" style="background:black;">
+    <div class="container-fluid">
+      <div class="row justify-content-around">
+        <div class="col-md-2  mt-2">
+
+            <a href="https://foodya.in">
+              <img src="{% static 'img/foodya-logo.png' %}" style="max-width:70%">
+            </a>
+          </div>
+
+          <div class="col-md-3 mt-2">
+            <a href="https://goo.gl/maps/8AHS5fPexyxLD5978" target="_blank">
+
+            <div class="row">
+
+            <div class="col-md-3" style="max-width:30%;">
+
+              <img style="max-width:60px;" src="{% static 'img/footer-location.png' %}" >
+            </div>
+            <div class="col-md-8 mt-2" style="max-width:40%; color:white">
+              <b>G-196 Noida</b><br>
+                <span style="font-weight:200;font-size:12px;">Get Direction</span>
+            </div>
+          </div>
+          </a>
+          </div>
+
+
+
+          <div class="col-md-3 mt-2">
+            <a href="tel:9818468108" target="_blank">
+
+            <div class="row">
+
+            <div class="col-md-4" style="max-width:30%;">
+
+              <img style="max-width:60px;" src="{% static 'img/call.png' %}" >
+            </div>
+            <div class="col-md-8 mt-2" style="max-width:40%; color:white; ">
+                <b>9818468108</b><br>
+                <span style="font-weight:200;font-size:12px;">Call Order Now</span>
+            </div>
+          </div>
+          </a>
+          </div>
+
+          <div class="col-md-2 mt-2">
+            <a href="tel:9818468108" target="_blank">
+
+            <div class="row">
+
+            <div class="col-md-4" style="max-width:30%;">
+
+              <a  href="https://www.instagram.com/letsfoodya" target="_blank"><img style="max-width:60px;" src="{% static 'img/insta.png' %}" ></a>
+            </div>
+            <div class="col-md-8 mt-4" style="max-width:46%; color:white; ">
+                <b><a  href="https://www.instagram.com/letsfoodya" target="_blank" style="color: white;" class="mt-3">Instagram</a></b><br>
+                <span style="font-weight:200;font-size:12px;"></span>
+            </div>
+          </div>
+          </a>
+          </div>
+          
+            
+          
+<!-- <div class="col-md-4 mt-2">
+  <div class="row justify-content-around">
+    <div class="col-md-2" style="max-width:20%";>
+     <a href=""><img style="max-width:60px;" src="{% static 'img/insta.png' %}" ></a>
+    </div>
+    <div class="col-md-3 mt-2" >
+      <a href="" style="color:white">follow us on insta</a>
+    </div>
+    
+      <div class="col-md-3" style="max-width:60%">
+        <a href=""><img  class="img-fluid ye" src="{% static 'img/1.png' %}" style="width:65px; height:auto;"></a>
+      </div> 
+       <div class="col-md-3"  style="max-width:20%">
+        <a href=""><img  class="img-fluid" src="{% static 'img/2.png' %}" style="width:65px; height:auto;"></a>
+       </div>
+    </div>
+
+</div> -->
+    
+     
+     
+      
+      
+<!--         
+           <a href=""><img src="{% static 'img/sw.png' %}" alt="sw.png"></a> 
+       <a href=""><img src="{% static 'img/zomzto.png' %}" alt="sw.png"></a> -->
+        
+       <div class="col-md-2 mt-1">
+        <a href="https://www.swiggy.com/restaurants/foodya-sector-64-noida-1-410744 " target="_blank"><img style="max-width:75px;" src="/static/img/1.png" ></a>
+          <a href="https://www.zomato.com/ncr/foodya-sector-63-noida" target="_blank"><img style="max-width:75px;" src="/static/img/2.png" ></a>
+      </div>
+     
+     
+   
+    </div>
+
+
+    </div>
+    
+
+
+
+
+  </div>
+
+
+
+
+
+  </footer>
+  <!-- <a href=""><img style="max-width:60px;" src="{% static 'img/insta.png' %}" ></a> -->
+
+  <script src="{% static 'js/core/jquery.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/core/popper.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/core/bootstrap.min.js' %}" type="text/javascript"></script>
+<!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
+<script src="{% static 'js/plugins/bootstrap-switch.js' %}"></script>
+<!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+<script src="{% static 'js/plugins/nouislider.min.js' %}" type="text/javascript"></script>
+<!--  Plugin for the DatePicker, full documentation here: https://github.com/uxsolutions/bootstrap-datepicker -->
+<script src="{% static 'js/plugins/moment.min.js' %}"></script>
+<!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
+<script src="{% static 'js/plugins/bootstrap-tagsinput.js' %}"></script>
+<!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+<script src="{% static 'js/plugins/bootstrap-selectpicker.js' %}" type="text/javascript"></script>
+<!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+<script src="{% static 'js/plugins/bootstrap-datetimepicker.js' %}" type="text/javascript"></script>
+<!--  Google Maps Plugin    -->
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+<!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
+<script src="{% static 'js/now-ui-kit.js' %}" type="text/javascript"></script>
+    <script>
+      $(document).ready(function() {
+        // the body of this function is in assets/js/now-ui-kit.js
+        nowuiKit.initSliders();
+      });
+
+      function scrollToDownload() {
+
+        if ($('.section-download').length != 0) {
+          $("html, body").animate({
+            scrollTop: $('.section-download').offset().top
+          }, 1000);
+        }
+      }
+
+//       $('#exampleModal').on('show.bs.modal', function (event) {
+//   var button = $(event.relatedTarget) // Button that triggered the modal
+//   var recipient = button.data('whatever') // Extract info from data-* attributes
+//   // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+//   // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+//   var modal = $(this)
+//   modal.find('.modal-title').text('New message to ' + recipient)
+//   modal.find('.modal-body input').val(recipient)
+// })
+    </script>
+
+
+
+</body>
+
+</html>
